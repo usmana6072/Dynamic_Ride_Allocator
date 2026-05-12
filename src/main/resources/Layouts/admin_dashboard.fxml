@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #F7FAFF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dynamic_ride_allocator.Controllers.AdminControllers.AdminDashboardController">
+
+    <children>
+        <HBox prefHeight="500.0" prefWidth="800.0">
+            <children>
+
+                <!-- ── SIDEBAR ── -->
+                <VBox prefHeight="500.0" prefWidth="170.0" style="-fx-background-color: #1A3A5C;">
+                    <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 14px; -fx-font-weight: bold;                                   -fx-border-color: transparent transparent rgba(255,255,255,0.15) transparent;                                   -fx-border-width: 1; -fx-padding: 14 16 18 16;" text="🚗  RideBook" />
+
+                    <Label fx:id="btnDashboard" onMouseClicked="#btnDashboardAction" prefWidth="170.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 12px; -fx-font-weight: bold;                                   -fx-background-color: rgba(255,255,255,0.15);                                   -fx-border-color: #5DB3FF transparent transparent transparent;                                   -fx-border-width: 0 0 0 3; -fx-padding: 10 16 10 13;" text="📊  Dashboard" />
+                    <Label fx:id="btnApproveRiders" onMouseClicked="#btnApproveRidersAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px;                                   -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="✅  Approve Riders" />
+                    <Label fx:id="btnManageUsers" onMouseClicked="#btnManageUsersAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px;                                   -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="👥  Manage Users" />
+                    <Label fx:id="btnProfile" onMouseClicked="#btnProfileAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px;                                   -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="👤  Profile" />
+
+                    <Region VBox.vgrow="ALWAYS" />
+
+                    <Label fx:id="btnLogout" onMouseClicked="#btnLogoutAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 12px;                                   -fx-padding: 10 16 14 16; -fx-cursor: hand;" text="🚪  Logout" />
+                </VBox>
+
+                <!-- ── MAIN AREA ── -->
+                <VBox prefHeight="500.0" prefWidth="530.0" style="-fx-background-color: #F7FAFF; -fx-padding: 20 20 20 20;">
+
+                    <!-- Page Title -->
+                    <Label style="-fx-text-fill: #1A3A5C; -fx-font-size: 15px; -fx-font-weight: bold;" text="Admin Dashboard">
+                        <VBox.margin><Insets bottom="4.0" /></VBox.margin>
+                    </Label>
+                    <Label style="-fx-text-fill: #999999; -fx-font-size: 12px;" text="Overview of system activity">
+                        <VBox.margin><Insets bottom="18.0" /></VBox.margin>
+                    </Label>
+
+                    <!-- Stat Cards — values set by controller -->
+                    <HBox spacing="12.0">
+                        <VBox.margin><Insets bottom="20.0" /></VBox.margin>
+                        <children>
+                            <VBox alignment="CENTER" prefHeight="72.0" prefWidth="118.0" style="-fx-background-color: #F0F6FF; -fx-background-radius: 10; -fx-padding: 14;">
+                                <Label fx:id="tvTotalRider" style="-fx-text-fill: #1A6DBB; -fx-font-size: 26px; -fx-font-weight: bold;" text="0" />
+                                <Label style="-fx-text-fill: #666666; -fx-font-size: 10px;" text="Total Riders" />
+                            </VBox>
+                            <VBox alignment="CENTER" prefHeight="72.0" prefWidth="118.0" style="-fx-background-color: #F0F6FF; -fx-background-radius: 10; -fx-padding: 14;">
+                                <Label fx:id="tvTotalDriver" style="-fx-text-fill: #1A6DBB; -fx-font-size: 26px; -fx-font-weight: bold;" text="0" />
+                                <Label style="-fx-text-fill: #666666; -fx-font-size: 10px;" text="Total Drivers" />
+                            </VBox>
+                            <VBox alignment="CENTER" prefHeight="72.0" prefWidth="118.0" style="-fx-background-color: #FFF8E6; -fx-background-radius: 10; -fx-padding: 14;">
+                                <Label fx:id="tvPendingApprovals" style="-fx-text-fill: #B07000; -fx-font-size: 26px; -fx-font-weight: bold;" text="0" />
+                                <Label style="-fx-text-fill: #666666; -fx-font-size: 10px;" text="Pending Approvals" />
+                            </VBox>
+                            <VBox alignment="CENTER" prefHeight="72.0" prefWidth="118.0" style="-fx-background-color: #E8FAF2; -fx-background-radius: 10; -fx-padding: 14;">
+                                <Label fx:id="tvActiveDriver" style="-fx-text-fill: #1A7A4A; -fx-font-size: 26px; -fx-font-weight: bold;" text="0" />
+                                <Label style="-fx-text-fill: #666666; -fx-font-size: 10px;" text="Active Drivers" />
+                            </VBox>
+                        </children>
+                    </HBox>
+
+                    <!-- Recent Activity Title -->
+                    <Label style="-fx-text-fill: #1A3A5C; -fx-font-size: 13px; -fx-font-weight: bold;" text="Recent Activity">
+                        <VBox.margin><Insets bottom="8.0" /></VBox.margin>
+                    </Label>
+
+                    <!-- Scrollable Activity Table -->
+                    <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;                                        -fx-border-color: transparent; -fx-focus-color: transparent;                                        -fx-faint-focus-color: transparent;" VBox.vgrow="ALWAYS">
+                        <VBox style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;                                      -fx-border-color: #E4EAF4; -fx-border-radius: 10;                                      -fx-border-width: 0.8;">
+
+                            <!-- Table Header -->
+                            <HBox style="-fx-background-color: #F0F5FF; -fx-background-radius: 10 10 0 0;                                          -fx-padding: 8 10 8 10; -fx-border-color: transparent transparent #D8E8FF transparent;                                          -fx-border-width: 1;">
+                                <Label prefWidth="180.0" style="-fx-text-fill: #1A6DBB; -fx-font-size: 11px; -fx-font-weight: bold;" text="User" />
+                                <Label prefWidth="200.0" style="-fx-text-fill: #1A6DBB; -fx-font-size: 11px; -fx-font-weight: bold;" text="Action" />
+                                <Label style="-fx-text-fill: #1A6DBB; -fx-font-size: 11px; -fx-font-weight: bold;" text="Time" />
+                            </HBox>
+
+                            <!-- Rows injected by controller -->
+                            <VBox fx:id="activityContainer" spacing="0" />
+
+                        </VBox>
+                    </ScrollPane>
+
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

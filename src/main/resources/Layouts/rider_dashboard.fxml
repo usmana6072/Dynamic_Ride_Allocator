@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #F7FAFF;"
+            xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.dynamic_ride_allocator.Controllers.RiderControllers.RiderDashboardController">
+
+    <children>
+        <HBox prefHeight="500.0" prefWidth="700.0">
+            <children>
+
+                <!-- ── SIDEBAR ── -->
+                <VBox prefHeight="500.0" prefWidth="170.0" style="-fx-background-color: #1A3A5C;">
+                    <Label text="🚗  RideBook"
+                           style="-fx-text-fill: #FFFFFF; -fx-font-size: 14px; -fx-font-weight: bold;
+                                  -fx-border-color: transparent transparent rgba(255,255,255,0.15) transparent;
+                                  -fx-border-width: 1; -fx-padding: 14 16 18 16;" />
+
+                    <Label fx:id="btnHome" onMouseClicked="#btnHomeAction" prefWidth="170.0"
+                           text="🏠  Home"
+                           style="-fx-text-fill: #FFFFFF; -fx-font-size: 12px; -fx-font-weight: bold;
+                                  -fx-background-color: rgba(255,255,255,0.15);
+                                  -fx-border-color: #5DB3FF transparent transparent transparent;
+                                  -fx-border-width: 0 0 0 3; -fx-padding: 10 16 10 13;" />
+                    <Label fx:id="btnBookRide" onMouseClicked="#btnBookRideAction" prefWidth="170.0"
+                           text="🚖  Book Ride"
+                           style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px;
+                                  -fx-padding: 10 16 10 16; -fx-cursor: hand;" />
+                    <Label fx:id="btnRideHistory" onMouseClicked="#btnRideHistoryAction" prefWidth="170.0"
+                           text="📜  Ride History"
+                           style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px;
+                                  -fx-padding: 10 16 10 16; -fx-cursor: hand;" />
+                    <Label fx:id="btnCurrentRide" onMouseClicked="#btnCurrentRideAction" prefWidth="170.0"
+                           text="🚘  Current Ride"
+                           style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px;
+                                  -fx-padding: 10 16 10 16; -fx-cursor: hand;" />
+                    <Label fx:id="btnProfile" onMouseClicked="#btnProfileAction" prefWidth="170.0"
+                           text="👤  Profile"
+                           style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px;
+                                  -fx-padding: 10 16 10 16; -fx-cursor: hand;" />
+
+                    <Region VBox.vgrow="ALWAYS" />
+
+                    <Label fx:id="btnLogout" onMouseClicked="#btnLogoutAction" prefWidth="170.0"
+                           text="🚪  Logout"
+                           style="-fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 12px;
+                                  -fx-padding: 10 16 14 16; -fx-cursor: hand;" />
+                </VBox>
+
+                <!-- ── MAIN AREA ── -->
+                <VBox prefHeight="500.0" prefWidth="530.0"
+                      style="-fx-background-color: #F7FAFF; -fx-padding: 20 20 20 20;">
+
+                    <!-- Greeting -->
+                    <Label fx:id="greetingLabel"
+                           text="Welcome back!"
+                           style="-fx-text-fill: #1A3A5C; -fx-font-size: 15px; -fx-font-weight: bold;">
+                        <VBox.margin><Insets bottom="2.0" /></VBox.margin>
+                    </Label>
+                    <Label text="Where are you heading today?"
+                           style="-fx-text-fill: #999999; -fx-font-size: 12px;">
+                        <VBox.margin><Insets bottom="16.0" /></VBox.margin>
+                    </Label>
+
+                    <!-- Book Now Banner -->
+                    <HBox alignment="CENTER_LEFT"
+                          style="-fx-background-color: #1A6DBB; -fx-background-radius: 10;
+                                 -fx-padding: 18 18 18 18;">
+                        <VBox.margin><Insets bottom="18.0" /></VBox.margin>
+                        <children>
+                            <VBox HBox.hgrow="ALWAYS" spacing="4.0">
+                                <Label text="Ready to ride?"
+                                       style="-fx-text-fill: rgba(255,255,255,0.85); -fx-font-size: 12px;" />
+                                <Label text="Book a ride now"
+                                       style="-fx-text-fill: #FFFFFF; -fx-font-size: 14px; -fx-font-weight: bold;" />
+                            </VBox>
+                            <Button mnemonicParsing="false" text="Book Now"
+                                    onAction="#btnBookRideAction"
+                                    style="-fx-background-color: #FFFFFF; -fx-text-fill: #1A6DBB;
+                                           -fx-font-size: 12px; -fx-font-weight: bold;
+                                           -fx-background-radius: 8; -fx-cursor: hand;
+                                           -fx-padding: 8 16 8 16;" />
+                        </children>
+                    </HBox>
+
+                    <!-- Recent Rides Title -->
+                    <Label text="Recent Rides"
+                           style="-fx-text-fill: #1A3A5C; -fx-font-size: 13px; -fx-font-weight: bold;">
+                        <VBox.margin><Insets bottom="8.0" /></VBox.margin>
+                    </Label>
+
+                    <!-- Scrollable Recent Rides -->
+                    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                                style="-fx-background: transparent; -fx-background-color: transparent;
+                                       -fx-border-color: transparent; -fx-focus-color: transparent;
+                                       -fx-faint-focus-color: transparent;">
+                        <VBox fx:id="recentRidesContainer" spacing="8.0"
+                              style="-fx-background-color: transparent; -fx-padding: 0 2 4 0;" />
+                    </ScrollPane>
+
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #F7FAFF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dynamic_ride_allocator.Controllers.RiderControllers.BookRideController">
+
+    <children>
+        <HBox prefHeight="500.0" prefWidth="800.0">
+            <children>
+
+                <!-- ── SIDEBAR ── -->
+                <VBox prefHeight="500.0" prefWidth="170.0" style="-fx-background-color: #1A3A5C;">
+                    <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 14px; -fx-font-weight: bold;                                   -fx-border-color: transparent transparent rgba(255,255,255,0.15) transparent;                                   -fx-border-width: 1; -fx-padding: 14 16 18 16;" text="🚗  RideBook" />
+                    <Label fx:id="btnHome" onMouseClicked="#btnHomeAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px;                                   -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="🏠  Home" />
+                    <Label fx:id="btnBookRide" onMouseClicked="#btnBookRideAction" prefWidth="170.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 12px; -fx-font-weight: bold;                                   -fx-background-color: rgba(255,255,255,0.15);                                   -fx-border-color: #5DB3FF transparent transparent transparent;                                   -fx-border-width: 0 0 0 3; -fx-padding: 10 16 10 13;" text="🚖  Book Ride" />
+                    <Label fx:id="btnRideHistory" onMouseClicked="#btnRideHistoryAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px;                                   -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="📜  Ride History" />
+                    <Label fx:id="btnCurrentRide" onMouseClicked="#btnCurrentRideAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px;                                   -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="🚘  Current Ride" />
+                    <Label fx:id="btnProfile" onMouseClicked="#btnProfileAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px;                                   -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="👤  Profile" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Label fx:id="btnLogout" onMouseClicked="#btnLogoutAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 12px;                                   -fx-padding: 10 16 14 16; -fx-cursor: hand;" text="🚪  Logout" />
+                </VBox>
+
+                <!-- ── MAIN AREA ── -->
+                <HBox prefHeight="500.0" prefWidth="530.0" spacing="14.0" style="-fx-background-color: #F7FAFF; -fx-padding: 20 20 20 20;">
+                    <children>
+
+                        <!-- Left: Form -->
+                        <VBox spacing="0" HBox.hgrow="ALWAYS">
+
+                            <Label style="-fx-text-fill: #1A3A5C; -fx-font-size: 15px; -fx-font-weight: bold;" text="Book a Ride">
+                                <VBox.margin><Insets bottom="16.0" /></VBox.margin>
+                            </Label>
+
+                            <!-- Pickup -->
+                            <Label text="Pickup Location"
+                                   style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;">
+                                <VBox.margin><Insets bottom="4.0" /></VBox.margin>
+                            </Label>
+
+                            <ComboBox fx:id="pickupComboBox" prefHeight="34.0" prefWidth="10000.0"
+                                      promptText="Select pickup location"
+                                      style="-fx-background-color: #FFFFFF; -fx-border-color: #D0D8E8;
+                 -fx-border-radius: 8; -fx-background-radius: 8;
+                 -fx-border-width: 1; -fx-font-size: 12px;">
+                                <VBox.margin><Insets bottom="12.0" /></VBox.margin>
+                            </ComboBox>
+
+                            <!-- Destination -->
+                            <Label text="Destination"
+                                   style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;">
+                                <VBox.margin><Insets bottom="4.0" /></VBox.margin>
+                            </Label>
+
+                            <ComboBox fx:id="destinationComboBox" prefHeight="34.0" prefWidth="10000.0"
+                                      promptText="Select destination"
+                                      style="-fx-background-color: #FFFFFF; -fx-border-color: #D0D8E8;
+                 -fx-border-radius: 8; -fx-background-radius: 8;
+                 -fx-border-width: 1; -fx-font-size: 12px;">
+                                <VBox.margin><Insets bottom="12.0" /></VBox.margin>
+                            </ComboBox>
+
+                            <!-- Vehicle Type -->
+                            <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Vehicle Type">
+                                <VBox.margin><Insets bottom="4.0" /></VBox.margin>
+                            </Label>
+                            <ComboBox fx:id="vehicleType" prefHeight="34.0" prefWidth="10000.0" promptText="Select vehicle type" style="-fx-background-color: #FFFFFF; -fx-border-color: #D0D8E8;                                              -fx-border-radius: 8; -fx-background-radius: 8;                                              -fx-border-width: 1; -fx-font-size: 12px;">
+                                <VBox.margin><Insets bottom="14.0" /></VBox.margin>
+                            </ComboBox>
+
+                            <!-- Fare Estimate Box -->
+                            <HBox alignment="CENTER_LEFT" style="-fx-background-color: #F0F6FF; -fx-background-radius: 8;                                          -fx-padding: 12 14 12 14;">
+                                <VBox.margin><Insets bottom="16.0" /></VBox.margin>
+                                <children>
+                                    <Label style="-fx-text-fill: #666666; -fx-font-size: 12px;" text="Estimated Fare" HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="fareEstimateLabel" style="-fx-text-fill: #1A6DBB; -fx-font-size: 16px;                                                   -fx-font-weight: bold;" text="Rs 0" />
+                                </children>
+                            </HBox>
+
+                            <!-- Feedback Label -->
+                            <Label fx:id="bookingFeedback" style="-fx-font-size: 11px; -fx-font-weight: bold;" text="">
+                                <VBox.margin><Insets bottom="8.0" /></VBox.margin>
+                            </Label>
+
+                            <!-- Find Rider Button -->
+                            <Button mnemonicParsing="false" onAction="#findRiderAction" prefHeight="36.0" prefWidth="10000.0" style="-fx-background-color: #1A6DBB; -fx-text-fill: #FFFFFF;                                            -fx-font-size: 13px; -fx-font-weight: bold;                                            -fx-background-radius: 8; -fx-cursor: hand;" text="Find Rider" />
+                        </VBox>
+
+                        <!-- Right: Route Preview Box -->
+                        <VBox alignment="CENTER" prefHeight="452.0" prefWidth="62.0" style="-fx-background-color: #F0F6FF; -fx-background-radius: 10;                                      -fx-border-color: #C0D8F0; -fx-border-radius: 10;                                      -fx-border-width: 1; -fx-border-style: dashed;                                      -fx-padding: 20;">
+                            <Label style="-fx-font-size: 30px;" text="🗺️">
+                                <VBox.margin><Insets bottom="8.0" /></VBox.margin>
+                            </Label>
+                            <Label style="-fx-text-fill: #5580B0; -fx-font-size: 12px; -fx-font-weight: bold;" text="Route Preview">
+                                <VBox.margin><Insets bottom="4.0" /></VBox.margin>
+                            </Label>
+                            <Label style="-fx-text-fill: #AAAAAA; -fx-font-size: 11px;" text="Enter locations to&#10;see route" wrapText="true" />
+
+                            <!-- Route detail populated by controller -->
+                            <VBox fx:id="routeDetailBox" spacing="6.0">
+                                <VBox.margin><Insets top="14.0" /></VBox.margin>
+                            </VBox>
+                        </VBox>
+
+                    </children>
+                </HBox>
+
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

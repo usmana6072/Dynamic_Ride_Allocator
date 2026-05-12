@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #F7FAFF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dynamic_ride_allocator.Controllers.DriverControllers.RideRequestsScreenController">
+
+    <children>
+        <HBox prefHeight="500.0" prefWidth="800.0">
+            <children>
+
+                <!-- ── SIDEBAR ── -->
+                <VBox prefHeight="500.0" prefWidth="170.0" style="-fx-background-color: #1A3A5C;">
+                    <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 14px; -fx-font-weight: bold;
+                                  -fx-border-color: transparent transparent rgba(255,255,255,0.15) transparent;
+                                  -fx-border-width: 1; -fx-padding: 14 16 18 16;" text="🚗  RideBook" />
+                    <Label fx:id="btnHome" onMouseClicked="#btnHomeAction" prefWidth="170.0"
+                           style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;"
+                           text="🏠  Home" />
+                    <Label fx:id="btnAvailability" onMouseClicked="#btnAvailabilityAction" prefWidth="170.0"
+                           style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;"
+                           text="📡  Availability" />
+                    <Label fx:id="btnRequests" onMouseClicked="#btnRequestsAction" prefWidth="170.0"
+                           style="-fx-text-fill: #FFFFFF; -fx-font-size: 12px; -fx-font-weight: bold;
+                                  -fx-background-color: rgba(255,255,255,0.15);
+                                  -fx-border-color: #5DB3FF transparent transparent transparent;
+                                  -fx-border-width: 0 0 0 3; -fx-padding: 10 16 10 13;"
+                           text="📋  Ride Requests" />
+                    <Label fx:id="btnCurrentRide" onMouseClicked="#btnCurrentRideAction" prefWidth="170.0"
+                           style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;"
+                           text="🚘  Current Ride" />
+                    <Label fx:id="btnProfile" onMouseClicked="#btnProfileAction" prefWidth="170.0"
+                           style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;"
+                           text="👤  Profile" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Label fx:id="btnLogout" onMouseClicked="#btnLogoutAction" prefWidth="170.0"
+                           style="-fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 12px; -fx-padding: 10 16 14 16; -fx-cursor: hand;"
+                           text="🚪  Logout" />
+                </VBox>
+
+                <!-- ── MAIN AREA ── -->
+                <VBox prefHeight="500.0" prefWidth="530.0"
+                      style="-fx-background-color: #F7FAFF; -fx-padding: 20 20 20 20;">
+
+                    <Label style="-fx-text-fill: #1A3A5C; -fx-font-size: 15px; -fx-font-weight: bold;"
+                           text="Incoming Ride Requests">
+                        <VBox.margin><Insets bottom="14.0" /></VBox.margin>
+                    </Label>
+
+                    <!-- ── Scrollable Dynamic Cards Area ── -->
+                    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                                style="-fx-background: transparent;
+                                       -fx-background-color: transparent;
+                                       -fx-border-color: transparent;
+                                       -fx-focus-color: transparent;
+                                       -fx-faint-focus-color: transparent;">
+
+                        <!-- Controller fills this VBox dynamically -->
+                        <VBox fx:id="requestsContainer" spacing="0"
+                              style="-fx-background-color: transparent; -fx-padding: 0 4 4 0;" />
+
+                    </ScrollPane>
+
+                </VBox>
+
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

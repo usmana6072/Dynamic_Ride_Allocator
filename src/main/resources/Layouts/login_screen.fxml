@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #F7FAFF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dynamic_ride_allocator.Controllers.LoginController">
+
+    <children>
+
+        <!-- Centered Login Card -->
+        <VBox alignment="CENTER" layoutX="130.0" layoutY="55.0" prefWidth="340.0" style="-fx-background-color: #FFFFFF;                  -fx-background-radius: 14;                  -fx-border-color: #E4EAF4;                  -fx-border-radius: 14;                  -fx-border-width: 0.8;                  -fx-padding: 28 28 28 28;">
+
+            <children>
+
+                <!-- Title -->
+                <Label style="-fx-text-fill: #1A3A5C;                        -fx-font-size: 17px;                        -fx-font-weight: bold;" text="Welcome Back">
+                    <VBox.margin><Insets bottom="4.0" /></VBox.margin>
+                </Label>
+
+                <!-- Subtitle -->
+                <Label style="-fx-text-fill: #999999;                        -fx-font-size: 11px;" text="Sign in to your account">
+                    <VBox.margin><Insets bottom="22.0" /></VBox.margin>
+                </Label>
+
+                <!-- Email Label -->
+                <Label style="-fx-text-fill: #666666;                        -fx-font-size: 11px;                        -fx-font-weight: bold;" text="Email Address">
+                    <VBox.margin><Insets bottom="4.0" /></VBox.margin>
+                </Label>
+
+                <!-- Email Field -->
+                <TextField fx:id="etEmail" prefHeight="34.0" prefWidth="284.0" promptText="you@email.com" style="-fx-background-color: #FFFFFF;                        -fx-border-color: #D0D8E8;                        -fx-border-radius: 8;                        -fx-background-radius: 8;                        -fx-border-width: 1;                        -fx-font-size: 12px;                        -fx-padding: 6 10 6 10;">
+                    <VBox.margin><Insets bottom="12.0" /></VBox.margin>
+                </TextField>
+
+                <!-- Password Label -->
+                <Label style="-fx-text-fill: #666666;                        -fx-font-size: 11px;                        -fx-font-weight: bold;" text="Password">
+                    <VBox.margin><Insets bottom="4.0" /></VBox.margin>
+                </Label>
+
+                <!-- Password Field -->
+                <PasswordField fx:id="etPassword" prefHeight="34.0" prefWidth="284.0" promptText="••••••••" style="-fx-background-color: #FFFFFF;                        -fx-border-color: #D0D8E8;                        -fx-border-radius: 8;                        -fx-background-radius: 8;                        -fx-border-width: 1;                        -fx-font-size: 12px;                        -fx-padding: 6 10 6 10;">
+                    <VBox.margin><Insets bottom="14.0" /></VBox.margin>
+                </PasswordField>
+
+                <!-- Login As Label -->
+                <Label style="-fx-text-fill: #666666;                        -fx-font-size: 11px;                        -fx-font-weight: bold;" text="Login As">
+                    <VBox.margin><Insets bottom="6.0" /></VBox.margin>
+                </Label>
+
+                <!-- Radio Buttons Row -->
+                <HBox alignment="CENTER_LEFT" spacing="18.0">
+                    <VBox.margin><Insets bottom="22.0" /></VBox.margin>
+                    <children>
+                        <RadioButton fx:id="btnAdmin" style="-fx-font-size: 12px; -fx-text-fill: #444444;" text="Admin">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="roleGroup" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="btnCustomer" style="-fx-font-size: 12px; -fx-text-fill: #444444;" text="Driver" toggleGroup="$roleGroup" />
+                        <RadioButton fx:id="btnRider" style="-fx-font-size: 12px; -fx-text-fill: #444444;" text="Rider" toggleGroup="$roleGroup" />
+                    </children>
+                </HBox>
+
+                <!-- Login Button -->
+                <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#handleLogin" prefHeight="36.0" prefWidth="284.0" style="-fx-background-color: #1A6DBB;                        -fx-text-fill: #FFFFFF;                        -fx-font-size: 13px;                        -fx-font-weight: bold;                        -fx-background-radius: 8;                        -fx-cursor: hand;" text="Login">
+                    <VBox.margin><Insets bottom="10.0" /></VBox.margin>
+                </Button>
+
+                <!-- Back Button -->
+                <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleBack" prefHeight="36.0" prefWidth="284.0" style="-fx-background-color: transparent;                        -fx-text-fill: #1A6DBB;                        -fx-border-color: #1A6DBB;                        -fx-border-width: 1.5;                        -fx-border-radius: 8;                        -fx-background-radius: 8;                        -fx-font-size: 13px;                        -fx-font-weight: bold;                        -fx-cursor: hand;" text="Back">
+                    <VBox.margin><Insets bottom="14.0" /></VBox.margin>
+                </Button>
+
+                <!-- Forgot Password -->
+                <Label fx:id="tvForgetPassword" style="-fx-text-fill: #1A6DBB;                        -fx-font-size: 12px;                        -fx-cursor: hand;" text="Forgot Password?" />
+
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>

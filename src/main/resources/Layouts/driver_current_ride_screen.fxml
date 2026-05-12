@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #F7FAFF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dynamic_ride_allocator.Controllers.DriverControllers.CurrentRideScreenController">
+
+    <children>
+        <HBox prefHeight="500.0" prefWidth="800.0">
+            <children>
+
+                <!-- ── SIDEBAR ── -->
+                <VBox prefHeight="500.0" prefWidth="170.0" style="-fx-background-color: #1A3A5C;">
+                    <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 14px; -fx-font-weight: bold;                              -fx-border-color: transparent transparent rgba(255,255,255,0.15) transparent;                              -fx-border-width: 1; -fx-padding: 14 16 18 16;" text="🚗  RideBook" />
+                    <Label fx:id="btnHome" onMouseClicked="#btnHomeAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="🏠  Home" />
+                    <Label fx:id="btnAvailability" onMouseClicked="#btnAvailabilityAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="📡  Availability" />
+                    <Label fx:id="btnRequests" onMouseClicked="#btnRequestsAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="📋  Ride Requests" />
+                    <Label fx:id="btnCurrentRide" onMouseClicked="#btnCurrentRideAction" prefWidth="170.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 12px; -fx-font-weight: bold;                              -fx-background-color: rgba(255,255,255,0.15);                              -fx-border-color: #5DB3FF transparent transparent transparent;                              -fx-border-width: 0 0 0 3; -fx-padding: 10 16 10 13;" text="🚘  Current Ride" />
+                    <Label fx:id="btnProfile" onMouseClicked="#btnProfileAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="👤  Profile" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Label fx:id="btnLogout" onMouseClicked="#btnLogoutAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 12px; -fx-padding: 10 16 14 16; -fx-cursor: hand;" text="🚪  Logout" />
+                </VBox>
+
+                <!-- ── MAIN AREA ── -->
+                <VBox prefHeight="500.0" prefWidth="530.0" style="-fx-background-color: #F7FAFF; -fx-padding: 20 20 20 20;">
+
+                    <Label style="-fx-text-fill: #1A3A5C; -fx-font-size: 15px; -fx-font-weight: bold;" text="Current Ride">
+                        <VBox.margin><Insets bottom="14.0" /></VBox.margin>
+                    </Label>
+
+                    <!-- Ride Detail Card -->
+                    <VBox prefWidth="380.0" style="-fx-background-color: #FFFFFF;                             -fx-background-radius: 10;                             -fx-border-color: #E4EAF4;                             -fx-border-radius: 10;                             -fx-border-width: 0.8;                             -fx-padding: 16 18 16 18;">
+                        <children>
+
+                            <!-- Customer Header Row -->
+                            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                                <VBox.margin><Insets bottom="14.0" /></VBox.margin>
+                                <children>
+                                    <!-- Avatar Circle -->
+                                    <StackPane prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: #D0E8FF; -fx-background-radius: 50;">
+                                        <Label fx:id="lblAvatar" style="-fx-text-fill: #1A6DBB; -fx-font-size: 18px; -fx-font-weight: bold;" text="Z" />
+                                    </StackPane>
+                                    <VBox HBox.hgrow="ALWAYS">
+                                        <Label fx:id="lblCustomerName" style="-fx-text-fill: #1A3A5C; -fx-font-size: 13px; -fx-font-weight: bold;" text="Zara Khan (Customer)" />
+                                        <Label fx:id="lblCustomerPhone" style="-fx-text-fill: #888888; -fx-font-size: 12px;" text="0312-9876543" />
+                                    </VBox>
+                                    <Label fx:id="lblStatus" style="-fx-background-color: #E6F7EF; -fx-text-fill: #1A7A4A;                                          -fx-background-radius: 20; -fx-font-size: 11px; -fx-font-weight: bold;                                          -fx-padding: 3 9 3 9;" text="  In Progress  " />
+                                </children>
+                            </HBox>
+
+                            <Separator style="-fx-opacity: 0.4;">
+                                <VBox.margin><Insets bottom="12.0" /></VBox.margin>
+                            </Separator>
+
+                            <!-- Pickup -->
+                            <Label style="-fx-text-fill: #AAAAAA; -fx-font-size: 10px; -fx-font-weight: bold;" text="PICKUP">
+                                <VBox.margin><Insets bottom="2.0" /></VBox.margin>
+                            </Label>
+                            <Label fx:id="lblPickup" style="-fx-text-fill: #1A3A5C; -fx-font-size: 13px;" text="📍  Gulberg III, Lahore">
+                                <VBox.margin><Insets bottom="10.0" /></VBox.margin>
+                            </Label>
+
+                            <!-- Destination -->
+                            <Label style="-fx-text-fill: #AAAAAA; -fx-font-size: 10px; -fx-font-weight: bold;" text="DESTINATION">
+                                <VBox.margin><Insets bottom="2.0" /></VBox.margin>
+                            </Label>
+                            <Label fx:id="lblDestination" style="-fx-text-fill: #1A3A5C; -fx-font-size: 13px;" text="🏁  DHA Phase 5, Lahore">
+                                <VBox.margin><Insets bottom="14.0" /></VBox.margin>
+                            </Label>
+
+                            <!-- Distance + Fare Cards -->
+                            <HBox spacing="10.0">
+                                <VBox.margin><Insets bottom="16.0" /></VBox.margin>
+                                <children>
+                                    <VBox alignment="CENTER" prefHeight="58.0" prefWidth="160.0" style="-fx-background-color: #F7FAFF; -fx-background-radius: 8; -fx-padding: 10;">
+                                        <Label fx:id="lblDistance" style="-fx-text-fill: #1A6DBB; -fx-font-size: 18px; -fx-font-weight: bold;" text="8.4 km" />
+                                        <Label style="-fx-text-fill: #888888; -fx-font-size: 11px;" text="Distance" />
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="58.0" prefWidth="160.0" style="-fx-background-color: #F7FAFF; -fx-background-radius: 8; -fx-padding: 10;">
+                                        <Label fx:id="lblFare" style="-fx-text-fill: #27A065; -fx-font-size: 18px; -fx-font-weight: bold;" text="Rs 280" />
+                                        <Label style="-fx-text-fill: #888888; -fx-font-size: 11px;" text="Fare" />
+                                    </VBox>
+                                </children>
+                            </HBox>
+
+                            <!-- Complete Ride Button -->
+                            <Button fx:id="btnCompleteRide" mnemonicParsing="false" prefHeight="36.0" prefWidth="344.0" style="-fx-background-color: #27A065;                                     -fx-text-fill: #FFFFFF;                                     -fx-font-size: 13px;                                     -fx-font-weight: bold;                                     -fx-background-radius: 8;                                     -fx-cursor: hand;" text="Complete Ride" />
+                        </children>
+                    </VBox>
+
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

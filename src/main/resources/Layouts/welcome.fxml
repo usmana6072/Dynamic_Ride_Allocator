@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:controller="com.example.dynamic_ride_allocator.Controllers.WelcomeController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #F7FAFF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+
+   <children>
+
+      <!-- Centered Card -->
+      <VBox alignment="CENTER" layoutX="175.0" layoutY="60.0" prefHeight="380.0" prefWidth="250.0" spacing="0.0" style="-fx-background-color: #FFFFFF;-fx-background-radius: 16;                         -fx-border-color: #E4EAF4;-fx-border-radius: 16;-fx-border-width: 0.8;-fx-padding: 32 28 32 28;">
+
+         <children>
+
+            <!-- Car Icon Circle -->
+            <StackPane prefHeight="72.0" prefWidth="72.0" style="-fx-background-color: #E6F0FF;                        -fx-background-radius: 50;">
+               <VBox.margin>
+                  <Insets bottom="18.0" />
+               </VBox.margin>
+               <!-- SVG-style car label as placeholder -->
+               <Label style="-fx-font-size: 28px;" text="🚗" />
+            </StackPane>
+
+            <!-- App Title -->
+            <Label style="-fx-text-fill: #1A3A5C;                        -fx-font-size: 18px;                        -fx-font-weight: bold;" text="Ride Booking System">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="4.0" />
+               </VBox.margin>
+            </Label>
+
+            <!-- Subtitle -->
+            <Label style="-fx-text-fill: #999999;                        -fx-font-size: 11px;" text="Fast, reliable rides — offline desktop app">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </Label>
+
+            <!-- Login Button (Primary) -->
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handleLogin" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #1A6DBB;                        -fx-text-fill: #FFFFFF;                        -fx-font-size: 13px;                        -fx-font-weight: bold;                        -fx-background-radius: 8;                        -fx-cursor: hand;" text="Login">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+
+            <!-- Register Button (Outline) -->
+            <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleRegister" prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: transparent;                        -fx-text-fill: #1A6DBB;                        -fx-border-color: #1A6DBB;                        -fx-border-width: 1.5;                        -fx-border-radius: 8;                        -fx-background-radius: 8;                        -fx-font-size: 13px;                        -fx-font-weight: bold;                        -fx-cursor: hand;" text="Register">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+
+            <!-- Exit Button (Gray) -->
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExit" prefHeight="36.0" prefWidth="220.0" style="-fx-background-color: #E0E0E0;                        -fx-text-fill: #444444;                        -fx-font-size: 13px;                        -fx-background-radius: 8;                        -fx-cursor: hand;" text="Exit">
+               <VBox.margin>
+                  <Insets bottom="28.0" />
+               </VBox.margin>
+            </Button>
+
+            <!-- Footer Label -->
+            <Label style="-fx-text-fill: #AAAAAA;                        -fx-font-size: 10px;" text="Offline Application • No internet required" />
+
+         </children>
+      </VBox>
+
+   </children>
+</AnchorPane>

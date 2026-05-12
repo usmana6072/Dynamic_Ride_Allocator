@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="700.0" style="-fx-background-color: #F7FAFF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dynamic_ride_allocator.Controllers.RegisterController">
+
+    <children>
+
+        <!-- Page Header Bar -->
+        <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="0.0" prefHeight="46.0" prefWidth="700.0" style="-fx-background-color: #1A6DBB;                  -fx-padding: 0 20 0 20;">
+            <children>
+                <Label style="-fx-text-fill: #FFFFFF;                        -fx-font-size: 14px;                        -fx-font-weight: bold;" text="Create Account" />
+            </children>
+        </HBox>
+
+        <!-- Main Form Card -->
+        <VBox layoutX="50.0" layoutY="64.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;                  -fx-background-radius: 12;                  -fx-border-color: #E4EAF4;                  -fx-border-radius: 12;                  -fx-border-width: 0.8;                  -fx-padding: 22 24 22 24;">
+
+            <children>
+
+                <!-- Register As Label -->
+                <Label style="-fx-text-fill: #666666;                        -fx-font-size: 11px;                        -fx-font-weight: bold;" text="Register As">
+                    <VBox.margin><Insets bottom="6.0" /></VBox.margin>
+                </Label>
+
+                <!-- Role Radio Buttons -->
+                <HBox alignment="CENTER_LEFT" spacing="20.0">
+                    <VBox.margin><Insets bottom="16.0" /></VBox.margin>
+                    <children>
+                        <RadioButton fx:id="btnDriver" selected="true" style="-fx-font-size: 12px; -fx-text-fill: #444444;" text="Driver">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="regRoleGroup" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="btnRider" style="-fx-font-size: 12px; -fx-text-fill: #444444;" text="Rider" toggleGroup="$regRoleGroup" />
+                    </children>
+                </HBox>
+
+                <!-- Row 1: Full Name + Email -->
+                <HBox spacing="14.0">
+                    <VBox.margin><Insets bottom="12.0" /></VBox.margin>
+                    <children>
+                        <VBox prefWidth="274.0" spacing="4.0">
+                            <children>
+                                <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Full Name" />
+                                <TextField fx:id="tvName" prefHeight="34.0" promptText="Ali Hassan" style="-fx-background-color: #FFFFFF;                                    -fx-border-color: #D0D8E8;                                    -fx-border-radius: 8;                                    -fx-background-radius: 8;                                    -fx-border-width: 1;                                    -fx-font-size: 12px;                                    -fx-padding: 6 10 6 10;" />
+                            </children>
+                        </VBox>
+                        <VBox prefWidth="274.0" spacing="4.0">
+                            <children>
+                                <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Email" />
+                                <TextField fx:id="tvEmail" prefHeight="34.0" promptText="ali@email.com" style="-fx-background-color: #FFFFFF;                                    -fx-border-color: #D0D8E8;                                    -fx-border-radius: 8;                                    -fx-background-radius: 8;                                    -fx-border-width: 1;                                    -fx-font-size: 12px;                                    -fx-padding: 6 10 6 10;" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Row 2: Phone + Address -->
+                <HBox spacing="14.0">
+                    <VBox.margin><Insets bottom="12.0" /></VBox.margin>
+                    <children>
+                        <VBox prefWidth="274.0" spacing="4.0">
+                            <children>
+                                <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Phone Number" />
+                                <TextField fx:id="tvPhone" prefHeight="34.0" promptText="+92 300 0000000" style="-fx-background-color: #FFFFFF;                                    -fx-border-color: #D0D8E8;                                    -fx-border-radius: 8;                                    -fx-background-radius: 8;                                    -fx-border-width: 1;                                    -fx-font-size: 12px;                                    -fx-padding: 6 10 6 10;" />
+                            </children>
+                        </VBox>
+                        <VBox prefWidth="274.0" spacing="4.0">
+                            <children>
+                                <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Address" />
+                                <TextField fx:id="tvAddress" prefHeight="34.0" promptText="Lahore, Pakistan" style="-fx-background-color: #FFFFFF;                                    -fx-border-color: #D0D8E8;                                    -fx-border-radius: 8;                                    -fx-background-radius: 8;                                    -fx-border-width: 1;                                    -fx-font-size: 12px;                                    -fx-padding: 6 10 6 10;" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Row 3: Password + Confirm Password -->
+                <HBox spacing="14.0">
+                    <VBox.margin><Insets bottom="14.0" /></VBox.margin>
+                    <children>
+                        <VBox prefWidth="274.0" spacing="4.0">
+                            <children>
+                                <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Password" />
+                                <PasswordField fx:id="tvPassword" prefHeight="34.0" promptText="••••••••" style="-fx-background-color: #FFFFFF;                                    -fx-border-color: #D0D8E8;                                    -fx-border-radius: 8;                                    -fx-background-radius: 8;                                    -fx-border-width: 1;                                    -fx-font-size: 12px;                                    -fx-padding: 6 10 6 10;" />
+                            </children>
+                        </VBox>
+                        <VBox fx:id="tvPassword2" prefWidth="274.0" spacing="4.0">
+                            <children>
+                                <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Confirm Password" />
+                                <PasswordField fx:id="tvConfirmPassword" prefHeight="34.0" promptText="••••••••" style="-fx-background-color: #FFFFFF;                                    -fx-border-color: #D0D8E8;                                    -fx-border-radius: 8;                                    -fx-background-radius: 8;                                    -fx-border-width: 1;                                    -fx-font-size: 12px;                                    -fx-padding: 6 10 6 10;" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Rider Info Section (shown when Rider is selected) -->
+                <VBox fx:id="driverInfoSection" style="-fx-background-color: #F0F6FF;                        -fx-background-radius: 8;                        -fx-border-color: #C0D8F0;                        -fx-border-radius: 8;                        -fx-border-width: 0.8;                        -fx-padding: 12 14 12 14;">
+                    <VBox.margin><Insets bottom="16.0" /></VBox.margin>
+                    <children>
+
+                        <!-- Rider Section Header -->
+                        <Label style="-fx-text-fill: #1A6DBB;                              -fx-font-size: 11px;                              -fx-font-weight: bold;" text="Driver Information  (visible when Driver is selected)">
+                            <VBox.margin><Insets bottom="10.0" /></VBox.margin>
+                        </Label>
+
+                        <!-- Vehicle Type + Vehicle Number -->
+                        <HBox spacing="14.0">
+                            <VBox.margin><Insets bottom="10.0" /></VBox.margin>
+                            <children>
+                                <VBox prefWidth="262.0" spacing="4.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Vehicle Type" />
+                                        <TextField fx:id="tvVehicleType" prefHeight="34.0" promptText="Bike / Car" style="-fx-background-color: #FFFFFF;                                          -fx-border-color: #D0D8E8;                                          -fx-border-radius: 8;                                          -fx-background-radius: 8;                                          -fx-border-width: 1;                                          -fx-font-size: 12px;                                          -fx-padding: 6 10 6 10;" />
+                                    </children>
+                                </VBox>
+                                <VBox prefWidth="262.0" spacing="4.0">
+                                    <children>
+                                        <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Vehicle Number" />
+                                        <TextField fx:id="tvVehicleNumber" prefHeight="34.0" promptText="LHR-0001" style="-fx-background-color: #FFFFFF;                                          -fx-border-color: #D0D8E8;                                          -fx-border-radius: 8;                                          -fx-background-radius: 8;                                          -fx-border-width: 1;                                          -fx-font-size: 12px;                                          -fx-padding: 6 10 6 10;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <!-- License Number (full width) -->
+                        <VBox spacing="4.0">
+                            <children>
+                                <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="License Number" />
+                                <TextField fx:id="tvLicenceNumber" prefHeight="34.0" prefWidth="538.0" promptText="DL-0000000" style="-fx-background-color: #FFFFFF;                                    -fx-border-color: #D0D8E8;                                    -fx-border-radius: 8;                                    -fx-background-radius: 8;                                    -fx-border-width: 1;                                    -fx-font-size: 12px;                                    -fx-padding: 6 10 6 10;" />
+                            </children>
+                        </VBox>
+
+                    </children>
+                </VBox>
+
+                <!-- Register + Back Buttons -->
+                <HBox spacing="12.0">
+                    <children>
+                        <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#handleRegister" prefHeight="36.0" prefWidth="274.0" style="-fx-background-color: #1A6DBB;                              -fx-text-fill: #FFFFFF;                              -fx-font-size: 13px;                              -fx-font-weight: bold;                              -fx-background-radius: 8;                              -fx-cursor: hand;" text="Register" />
+                        <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleBack" prefHeight="36.0" prefWidth="274.0" style="-fx-background-color: transparent;                              -fx-text-fill: #1A6DBB;                              -fx-border-color: #1A6DBB;                              -fx-border-width: 1.5;                              -fx-border-radius: 8;                              -fx-background-radius: 8;                              -fx-font-size: 13px;                              -fx-font-weight: bold;                              -fx-cursor: hand;" text="Back" />
+                    </children>
+                </HBox>
+
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>

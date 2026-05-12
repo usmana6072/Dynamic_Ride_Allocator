@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #F7FAFF;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dynamic_ride_allocator.Controllers.DriverControllers.DriverProfileScreenController">
+
+    <children>
+        <HBox prefHeight="500.0" prefWidth="800.0">
+            <children>
+
+                <!-- ── SIDEBAR ── -->
+                <VBox prefHeight="500.0" prefWidth="170.0" style="-fx-background-color: #1A3A5C;">
+                    <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 14px; -fx-font-weight: bold;                              -fx-border-color: transparent transparent rgba(255,255,255,0.15) transparent;                              -fx-border-width: 1; -fx-padding: 14 16 18 16;" text="🚗  RideBook" />
+                    <Label fx:id="btnHome" onMouseClicked="#btnHomeAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="🏠  Home" />
+                    <Label fx:id="btnAvailability" onMouseClicked="#btnAvailabilityAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="📡  Availability" />
+                    <Label fx:id="btnRequests" onMouseClicked="#btnRequestsAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="📋  Ride Requests" />
+                    <Label fx:id="btnCurrentRide" onMouseClicked="#btnCurrentRideAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; -fx-padding: 10 16 10 16; -fx-cursor: hand;" text="🚘  Current Ride" />
+                    <Label fx:id="btnProfile" onMouseClicked="#btnProfileAction" prefWidth="170.0" style="-fx-text-fill: #FFFFFF; -fx-font-size: 12px; -fx-font-weight: bold;                              -fx-background-color: rgba(255,255,255,0.15);                              -fx-border-color: #5DB3FF transparent transparent transparent;                              -fx-border-width: 0 0 0 3; -fx-padding: 10 16 10 13;" text="👤  Profile" />
+                    <Region VBox.vgrow="ALWAYS" />
+                    <Label fx:id="btnLogout" onMouseClicked="#btnLogoutAction" prefWidth="170.0" style="-fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 12px; -fx-padding: 10 16 14 16; -fx-cursor: hand;" text="🚪  Logout" />
+                </VBox>
+
+                <!-- ── MAIN AREA ── -->
+                <VBox prefHeight="500.0" prefWidth="530.0" style="-fx-background-color: #F7FAFF; -fx-padding: 20 20 20 20;">
+
+                    <Label style="-fx-text-fill: #1A3A5C; -fx-font-size: 15px; -fx-font-weight: bold;" text="Rider Profile">
+                        <VBox.margin><Insets bottom="14.0" /></VBox.margin>
+                    </Label>
+
+                    <HBox spacing="14.0">
+                        <children>
+
+                            <!-- Personal Details Card -->
+                            <VBox prefWidth="238.0" style="-fx-background-color: #FFFFFF;                                   -fx-background-radius: 10;                                   -fx-border-color: #E4EAF4;                                   -fx-border-radius: 10;                                   -fx-border-width: 0.8;                                   -fx-padding: 14 16 14 16;">
+                                <children>
+                                    <Label style="-fx-text-fill: #1A6DBB; -fx-font-size: 12px; -fx-font-weight: bold;" text="Personal Details">
+                                        <VBox.margin><Insets bottom="12.0" /></VBox.margin>
+                                    </Label>
+
+                                    <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Full Name"><VBox.margin><Insets bottom="4.0" /></VBox.margin></Label>
+                                    <TextField fx:id="tvName" prefHeight="32.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D0D8E8;                                              -fx-border-radius: 8; -fx-background-radius: 8;                                              -fx-border-width: 1; -fx-font-size: 12px; -fx-padding: 5 10 5 10;" text="Bilal Ahmed">
+                                        <VBox.margin><Insets bottom="10.0" /></VBox.margin>
+                                    </TextField>
+
+                                    <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Email"><VBox.margin><Insets bottom="4.0" /></VBox.margin></Label>
+                                    <TextField fx:id="tvEmail" prefHeight="32.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D0D8E8;                                              -fx-border-radius: 8; -fx-background-radius: 8;                                              -fx-border-width: 1; -fx-font-size: 12px; -fx-padding: 5 10 5 10;" text="bilal@gmail.com">
+                                        <VBox.margin><Insets bottom="10.0" /></VBox.margin>
+                                    </TextField>
+
+                                    <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Phone"><VBox.margin><Insets bottom="4.0" /></VBox.margin></Label>
+                                    <TextField fx:id="tvPhone" prefHeight="32.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D0D8E8;                                              -fx-border-radius: 8; -fx-background-radius: 8;                                              -fx-border-width: 1; -fx-font-size: 12px; -fx-padding: 5 10 5 10;" text="0301-1234567" />
+                                </children>
+                            </VBox>
+
+                            <!-- Vehicle Details Card -->
+                            <VBox prefWidth="238.0" style="-fx-background-color: #FFFFFF;                                   -fx-background-radius: 10;                                   -fx-border-color: #E4EAF4;                                   -fx-border-radius: 10;                                   -fx-border-width: 0.8;                                   -fx-padding: 14 16 14 16;">
+                                <children>
+                                    <Label style="-fx-text-fill: #1A6DBB; -fx-font-size: 12px; -fx-font-weight: bold;" text="Vehicle Details">
+                                        <VBox.margin><Insets bottom="12.0" /></VBox.margin>
+                                    </Label>
+
+                                    <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Vehicle Type"><VBox.margin><Insets bottom="4.0" /></VBox.margin></Label>
+                                    <TextField fx:id="tvVehicleType" prefHeight="32.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D0D8E8;                                              -fx-border-radius: 8; -fx-background-radius: 8;                                              -fx-border-width: 1; -fx-font-size: 12px; -fx-padding: 5 10 5 10;" text="Bike">
+                                        <VBox.margin><Insets bottom="10.0" /></VBox.margin>
+                                    </TextField>
+
+                                    <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="Vehicle Number"><VBox.margin><Insets bottom="4.0" /></VBox.margin></Label>
+                                    <TextField fx:id="tvVehicleNumber" prefHeight="32.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D0D8E8;                                              -fx-border-radius: 8; -fx-background-radius: 8;                                              -fx-border-width: 1; -fx-font-size: 12px; -fx-padding: 5 10 5 10;" text="LHR-1234">
+                                        <VBox.margin><Insets bottom="10.0" /></VBox.margin>
+                                    </TextField>
+
+                                    <Label style="-fx-text-fill: #666666; -fx-font-size: 11px; -fx-font-weight: bold;" text="License Number"><VBox.margin><Insets bottom="4.0" /></VBox.margin></Label>
+                                    <TextField fx:id="tvLicenceNumber" prefHeight="32.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D0D8E8;                                              -fx-border-radius: 8; -fx-background-radius: 8;                                              -fx-border-width: 1; -fx-font-size: 12px; -fx-padding: 5 10 5 10;" text="DL-123456" />
+                                </children>
+                            </VBox>
+
+                        </children>
+                    </HBox>
+
+                    <!-- Update Button -->
+                    <Button fx:id="btnUpdateProfile" mnemonicParsing="false" onAction="#updateProfile" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: #1A6DBB;                               -fx-text-fill: #FFFFFF;                               -fx-font-size: 13px;                               -fx-font-weight: bold;                               -fx-background-radius: 8;                               -fx-cursor: hand;" text="Update Profile">
+                        <VBox.margin><Insets top="16.0" /></VBox.margin>
+                    </Button>
+
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
